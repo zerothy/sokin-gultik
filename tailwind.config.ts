@@ -11,6 +11,13 @@ const config: Config = {
       fontFamily: {
         'poppins': ["Poppins", "sans-serif"],
       },
+      colors: {
+        'charcoal': '#273E47',
+        'ecru': '#D8C99B',
+        'butterscotch': '#D8973C',
+        'alloyorange': '#BD632F',
+        'amaranthpurple': '#A4243B' 
+      }
     },
   },
   plugins: [],
