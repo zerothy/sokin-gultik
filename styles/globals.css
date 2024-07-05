@@ -15,3 +15,51 @@ html {
     -ms-user-select: none;
     user-select: none;
 }
+
+.shake-effect {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.shake-effect-2 {
+    animation: shakes linear 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-0.4deg); }
+    50% { transform: rotate(0.4deg); }
+    75% { transform: rotate(0deg); }
+    100% { transform: rotate(0.4deg); }
+}
+
+@keyframes shakes {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+
+.fadeInAnimation {
+    animation: fadeIn 400ms ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fadeOutAnimation {
+    animation: fadeOut 400ms ease-in forwards;
+    animation-delay: 1s;
+}
+
+.fadeOutAnimation2 {
+    animation: fadeOut 400ms ease-in forwards;
+    animation-delay: 2s;
+}
+  
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
