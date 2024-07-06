@@ -22,7 +22,7 @@ export default function Intro({ onEnd }: { onEnd: any}){
             id = setTimeout(() => {
                 setStep((prev) => {
                     if(prev > 15) return prev
-                    if(prev === 3) setTimer(1400)
+                    if(prev === 3) setTimer(1800)
                     if(prev === 4) setTimer(400)
                     if(prev === 5) setTimer(800)
                     if(prev === 6) setTimer(400)
