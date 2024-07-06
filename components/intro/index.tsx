@@ -5,13 +5,19 @@ import { LuSun } from "react-icons/lu";
 
 import LoadingStart from "../loadingstart";
 
-export default function Intro(){
+export default function Intro({ onEnd }: { onEnd: any}){
     const [step, setStep] = useState(0);
     const [isActive, setIsActive] = useState(false);
     const [timer, setTimer] = useState(400);
 
     useEffect(() => {
         let id: NodeJS.Timeout;
+        if(step === 15){
+            setTimeout(() => {
+                onEnd()
+            }, 2600)
+        }
+
         if(isActive && step < 15){
             id = setTimeout(() => {
                 setStep((prev) => {
