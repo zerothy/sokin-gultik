@@ -31,6 +31,26 @@ export default function Hero(){
 
             setPercentage(nextPercentage)
         }
+
+        win.ontouchstart = (e) => {
+            setTrack(e.touches[0].clientX)
+        }
+
+        win.ontouchend = () => {
+            setTrack(0)
+            setPrevPercentage(percentage)
+        }
+
+        win.ontouchmove = (e) => {
+            if(track === 0) return
+
+            const mouseDelta = track - e.touches[0].clientX
+            const maxDelta = window.innerWidth / 2
+
+            setNextPercentage(Math.min(0, Math.max(-100, prevPercentage + (mouseDelta / maxDelta * -100))))
+
+            setPercentage(nextPercentage)
+        }
     }
 
     return (
