@@ -39,7 +39,8 @@ export default function Hero(){
                 className="flex flex-row gap-4 absolute left-1/2 top-1/2 w-full" 
                 style={{
                     transform: `translate(${nextPercentage}%, -50%)`,
-                    transition: "transform 1200ms forwards",
+                    transition: "transform 1200ms",
+                    animationFillMode: "forwards",
                 }}
             >
                 {
@@ -51,7 +52,8 @@ export default function Hero(){
                                 className="object-cover unselectable h-80 w-56" draggable="false" 
                                 style={{
                                     objectPosition: `${nextPercentage + 100}% 50%`,
-                                    transition: "object-position 1200ms forwards",
+                                    transition: "object-position 1200ms",
+                                    animationFillMode: "forwards",
                                 }}
                             />
                         </div>
