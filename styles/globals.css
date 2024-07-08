@@ -8,6 +8,7 @@ html {
     font-family: 'Rock Salt', sans-serif;
     scroll-behavior: smooth;
     overflow: hidden;
+    background-color: #273E47;
 }
 
 .unselectable {
@@ -63,4 +64,26 @@ html {
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
+}
+
+.slideUp {
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(100%) scale(0.98); }
+    50% { transform: translateY(70%) scale(0.98); }
+    95% { transform: translateY(0%) scale(0.98); }
+    100% { transform: scale(1); }
+}
+
+.slideDown {
+    animation: slideDown 1s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+    0% { transform: scale(1); }
+    50% { transform: translateY(0%) scale(0.98); }
+    95% { transform: translateY(30%) scale(0.98); }
+    100% { transform: translateY(100%) scale(0.98); }
 }
