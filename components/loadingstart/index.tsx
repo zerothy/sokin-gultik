@@ -18,7 +18,7 @@ export default function LoadingStart(){
                 ))}
             </div>
             <div className="pt-3 shake-effect">
-                Sokin Gultik's<br/>Production
+                Sokin Gultik&apos;s<br/>Production
             </div>
         </div>
     )
