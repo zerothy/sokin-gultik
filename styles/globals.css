@@ -51,6 +51,10 @@ html {
     animation: fadeIn 400ms ease-in forwards;
 }
 
+.fadeInAnimation2 {
+    animation: fadeIn 800ms ease-in forwards;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
