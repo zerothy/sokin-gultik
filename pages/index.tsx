@@ -5,7 +5,7 @@ import Intro from "@/components/intro";
 import Hero from "@/components/Hero";
 
 export default function Home() {
-    const [showIntro, setShowIntro] = useState(true);
+    const [showIntro, setShowIntro] = useState(false);
     const [music, setMusic] = useState(false);
 
     const handleIntroEnd = () => {
