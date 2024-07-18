@@ -5,7 +5,7 @@ import Intro from "@/components/intro";
 import Hero from "@/components/Hero";
 
 export default function Home() {
-    const [showIntro, setShowIntro] = useState(false);
+    const [showIntro, setShowIntro] = useState(true);
     const [music, setMusic] = useState(false);
 
     const handleIntroEnd = () => {
@@ -21,7 +21,7 @@ export default function Home() {
             src: ["/sounds/musicbg.mp3"],
             loop: true,
             autoplay: false,
-            volume: 0.05,
+            volume: 0.2,
         });
 
         if(music) sound.play();

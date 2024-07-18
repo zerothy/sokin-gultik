@@ -22,7 +22,7 @@ export default function Intro({ onEnd, musicStart }: { onEnd: any, musicStart: a
         if(step === 1){
             setTimeout(() => {
                 musicStart()
-            }, 3100)
+            }, 2000)
         }
 
         if(isActive && step < 16){

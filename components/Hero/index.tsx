@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 
 import { profileConstant } from "./ProfileConstant"
-import next from "next"
+import Card from "../Card"
 
 export default function Hero() {
     const [track, setTrack] = useState(0)
@@ -15,6 +15,7 @@ export default function Hero() {
     const [isUnclicked, setIsUnclicked] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
     const [isAnimated, setIsAnimated] = useState(false)
+    const [isAnimatedCard, setIsAnimatedCard] = useState(false)
     const [isTransitioned, setIsTransitioned] = useState(false)
     const [isSlide, setIsSlide] = useState(false)
 
@@ -27,6 +28,7 @@ export default function Hero() {
     const handleDeselectImage = () => {
         setIsAnimated(false)
         setIsUnclicked(true)
+        setTimeout(() => setIsAnimatedCard(false), 1200)
         setTimeout(() => setIsUnclicked(false), 500)
         setTimeout(() => setSelectedImage(null), 500)
     }
@@ -34,6 +36,7 @@ export default function Hero() {
     const handleLeft = () => {
         setIsAnimated(false)
         setIsSlide(true)
+        setTimeout(() => setIsAnimatedCard(false), 1200)
         setTimeout(() => setIsSlide(false), 500)
         setTimeout(() => {
             setSelectedImage((prev) => {
@@ -47,6 +50,7 @@ export default function Hero() {
     const handleRight = () => {
         setIsAnimated(false)
         setIsSlide(true)
+        setTimeout(() => setIsAnimatedCard(false), 1200)
         setTimeout(() => setIsSlide(false), 500)
         setTimeout(() => {
             setSelectedImage((prev) => {
@@ -99,12 +103,22 @@ export default function Hero() {
     }
 
     useEffect(() => {       
-        if(isClicked) setTimeout(() => setIsAnimated(true), 1000)
-        else setTimeout(() => setIsAnimated(true), 1200)
-    }, [selectedImage])
+        if(isClicked) {
+            setTimeout(() => {
+                setIsAnimated(true)
+                setIsAnimatedCard(true)
+            }, 1000)
+        }
+        else {
+            setTimeout(() => {
+                setIsAnimated(true)
+                setIsAnimatedCard(true)
+            }, 1200)
+        }
+        }, [selectedImage])
 
     useEffect(() => {
-        setTimeout(() => setIsTransitioned(true), 400)
+        setIsTransitioned(true)
         setTimeout(() => setIsTransitioned(false), 1200)
     }, [isSlide])
 
@@ -142,31 +156,37 @@ export default function Hero() {
                         className={`z-40 relative flex bg-charcoal ${isClicked ? 'slideUp' : ''} ${isUnclicked ? 'slideDown' : ''} `}
                     >
                         <div 
-                            className={`flex flex-col h-screen w-screen`}
+                            className={`flex flex-col h-screen w-screen z-[100]`}
                         >
                             <div className={`w-full h-1/3 bg-[#1A2D36] delay-0 transition-all duration-300 ease-out ${isTransitioned ? 'translate-x-0' : 'translate-x-full'}`} />
                             <div className={`w-full h-1/3 bg-[#1A2D36] delay-[200ms] transition-all duration-300 ease-out ${isTransitioned ? 'translate-x-0' : 'translate-x-full'}`} />
                             <div className={`w-full h-1/3 bg-[#1A2D36] delay-[400ms] transition-all duration-300 ease-out ${isTransitioned ? 'translate-x-0' : 'translate-x-full'}`} />
                         </div>
 
-                        <div className="absolute h-screen w-screen z-[80] flex items-center justify-center">
-                            <div className="w-[40%] h-full" onClick={() => {if(!isTransitioned) handleLeft()}}></div>
-                            <div className="w-[20%] h-full"></div>
-                            <div className="w-[40%] h-full" onClick={() => {if(!isTransitioned) handleRight()}}></div>
+                        <div className="absolute h-screen w-screen z-60 flex items-center justify-center">
+                            <div className="w-[40%] h-full z-[100]" onClick={() => {if(!isTransitioned) handleLeft()}}></div>
+                            <div className="w-[20%] h-full z-[100]"></div>
+                            <div className="w-[40%] h-full z-[100]" onClick={() => {if(!isTransitioned) handleRight()}}></div>
 
                             <div 
-                                className="absolute w-max h-14 flex justify-center font-serif overflow-hidden" 
+                                className="absolute left-48 w-max h-14 flex justify-between font-serif overflow-hidden" 
                                 onClick={() => {if(!isTransitioned) handleDeselectImage()}}
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
                             >
-                                <div className={`text-5xl text-center text-ecru ${isAnimated ? `${isHovered ? '-translate-y-[185%]' : '-translate-y-[90%]'}` : ''}  transition-all duration-300 ease-out cursor-pointer`}>
+                                <div className={`text-5xl text-center text-ecru z-[100] ${isAnimated ? `${isHovered ? '-translate-y-[185%]' : '-translate-y-[90%]'}` : ''}  transition-all duration-300 ease-out cursor-pointer`}>
                                     <span></span>
                                     <br />
                                     {profileConstant[selectedImage].profileName}
                                     <br />
                                     {profileConstant[selectedImage].fullName}
                                 </div>
+                            </div>
+
+                            <div className="absolute right-0 mr-64 z-[60]">
+                                {
+                                    (isAnimatedCard) && (<Card index={selectedImage} />)
+                                }
                             </div>
                         </div>
                     </div>
