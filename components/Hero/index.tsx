@@ -3,11 +3,15 @@ import React, { useState, useEffect, useRef } from "react"
 import { profileConstant } from "./ProfileConstant"
 import Card from "../Card"
 
+import useWindowWidth from "@/hooks/useWindowWidth"
+
 export default function Hero() {
     const [track, setTrack] = useState(0)
     const [percentage, setPercentage] = useState(0)
     const [prevPercentage, setPrevPercentage] = useState(0)
     const [nextPercentage, setNextPercentage] = useState(0)
+
+    const windowWidth = useWindowWidth();
 
     const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
@@ -170,7 +174,7 @@ export default function Hero() {
                             <div className="w-[40%] h-full z-[100]" onClick={() => {if(!isTransitioned) handleRight()}}></div>
 
                             <div 
-                                className="absolute left-60 top-72 w-max h-14 flex justify-between font-serif overflow-hidden" 
+                                className={`absolute ${windowWidth < 1285 ? 'ml-[6.5rem] mt-[25%]' : 'ml-48 mt-[20%]'} left-0 top-0 w-max h-14 flex justify-between font-serif overflow-hidden`} 
                                 onClick={() => {if(!isTransitioned) handleDeselectImage()}}
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
@@ -184,15 +188,15 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <div className="absolute font-serif text-ecru w-96 h-[5.2rem] overflow-hidden text-lg text-pretty left-60 bottom-64">
+                            <div className={`absolute font-serif text-ecru w-96 h-[5.2rem] overflow-hidden text-lg text-pretty left-0 top-0 ${windowWidth <= 1285 ? 'ml-[6.5rem] mt-[30%]' : 'ml-48 mt-[24%]'}`}>
                                 <p className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-300 ease-out`}>{profileConstant[selectedImage].quotes}</p>
                             </div>
 
-                            <div className="absolute font-serif text-ecru top-[17rem] left-[45rem] overflow-hidden">
+                            <div className={`absolute font-serif text-ecru top-0 left-0 overflow-hidden ${windowWidth <= 1285 ? 'ml-[34.5rem] mt-[24%]' : 'ml-[39.8rem] mt-[19%]'}`}>
                                 <h1 className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-400 ease-out`}>return</h1>
                             </div>
 
-                            <div className="absolute right-0 mr-64 z-[60]">
+                            <div className={`absolute right-0 z-[60] ${windowWidth <= 1285 ? 'mr-[9%]' : 'mr-64'}`}>
                                 {
                                     (isAnimatedCard) && (<Card index={selectedImage} />)
                                 }

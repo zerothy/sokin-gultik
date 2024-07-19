@@ -80,7 +80,7 @@ html {
 }
 
 .slideUpCard {
-    animation: slideUpCard 0.8s ease-out;
+    animation: slideUp 0.8s ease-out;
 }
 
 @keyframes slideUpCard {

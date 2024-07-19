@@ -6,7 +6,7 @@ export default function Card({ index }: { index: number }) {
             <img 
                 src={profileConstant[index].fileName} 
                 alt={profileConstant[index].altName}
-                className="w-[24rem] h-[32rem] object-cover slideUpCard rotate-[6deg] z-[60]"
+                className="w-[20rem] h-[28rem] object-cover shadow-lg shadow-[#1A2D36] slideUpCard z-[60]"
             />
         </div>
     )
