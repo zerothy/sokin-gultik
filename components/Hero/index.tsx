@@ -169,7 +169,7 @@ export default function Hero() {
                             <div className="w-[40%] h-full z-[100]" onClick={() => {if(!isTransitioned) handleRight()}}></div>
 
                             <div 
-                                className="absolute left-48 w-max h-14 flex justify-between font-serif overflow-hidden" 
+                                className="absolute left-60 top-72 w-max h-14 flex justify-between font-serif overflow-hidden" 
                                 onClick={() => {if(!isTransitioned) handleDeselectImage()}}
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
@@ -181,6 +181,14 @@ export default function Hero() {
                                     <br />
                                     {profileConstant[selectedImage].fullName}
                                 </div>
+                            </div>
+
+                            <div className="absolute font-serif text-ecru w-96 h-[5.2rem] overflow-hidden text-lg text-pretty left-60 bottom-64">
+                                <p className={`${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'} transition-all duration-300 ease-out`}>{profileConstant[selectedImage].quotes}</p>
+                            </div>
+
+                            <div className="absolute font-serif text-ecru top-[17rem] left-[45rem] overflow-hidden">
+                                <h1 className={`${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'} transition-all duration-400 ease-out`}>return</h1>
                             </div>
 
                             <div className="absolute right-0 mr-64 z-[60]">
