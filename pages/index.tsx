@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import useWindowWidth from "@/hooks/useWindowWidth";
 
 export default function Home() {
-    const [showIntro, setShowIntro] = useState(false);
+    const [showIntro, setShowIntro] = useState(true);
     const [music, setMusic] = useState(false);
     const windowWidth = useWindowWidth(); // Use the custom hook
 
