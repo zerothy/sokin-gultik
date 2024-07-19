@@ -196,7 +196,7 @@ export default function Hero() {
                                 <h1 className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-400 ease-out`}>return</h1>
                             </div>
 
-                            <div className={`absolute right-0 z-[60] ${windowWidth <= 1285 ? 'mr-[9%]' : 'mr-64'}`}>
+                            <div className={`absolute right-0 z-[60] ${windowWidth <= 1285 ? (windowWidth <= 1124 ? 'mr-[9%]' : 'mr-[13%]') : 'mr-64'}`}>
                                 {
                                     (isAnimatedCard) && (<Card index={selectedImage} />)
                                 }
