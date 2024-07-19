@@ -26,6 +26,7 @@ export default function Hero() {
     }
 
     const handleDeselectImage = () => {
+        setIsHovered(false)
         setIsAnimated(false)
         setIsUnclicked(true)
         setTimeout(() => setIsAnimatedCard(false), 1200)
@@ -184,11 +185,11 @@ export default function Hero() {
                             </div>
 
                             <div className="absolute font-serif text-ecru w-96 h-[5.2rem] overflow-hidden text-lg text-pretty left-60 bottom-64">
-                                <p className={`${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'} transition-all duration-300 ease-out`}>{profileConstant[selectedImage].quotes}</p>
+                                <p className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-300 ease-out`}>{profileConstant[selectedImage].quotes}</p>
                             </div>
 
                             <div className="absolute font-serif text-ecru top-[17rem] left-[45rem] overflow-hidden">
-                                <h1 className={`${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'} transition-all duration-400 ease-out`}>return</h1>
+                                <h1 className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-400 ease-out`}>return</h1>
                             </div>
 
                             <div className="absolute right-0 mr-64 z-[60]">
