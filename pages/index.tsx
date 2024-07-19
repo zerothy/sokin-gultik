@@ -7,7 +7,8 @@ import useWindowWidth from "@/hooks/useWindowWidth";
 export default function Home() {
     const [showIntro, setShowIntro] = useState(true);
     const [music, setMusic] = useState(false);
-    const windowWidth = useWindowWidth(); // Use the custom hook
+    const [soundplay, setSoundplay] = useState(false);
+    const windowWidth = useWindowWidth();
 
     const handleIntroEnd = () => {
         setShowIntro(false);
@@ -25,6 +26,8 @@ export default function Home() {
             volume: 0.2,
         });
 
+        if (music) setTimeout(() => setSoundplay(true), 800);
+
         if (music) sound.play();
     }, [music]);
 
@@ -40,6 +43,16 @@ export default function Home() {
                 <>
                     {showIntro && <Intro onEnd={handleIntroEnd} musicStart={handleMusicStart} />}
                     {!showIntro && <Hero />}
+                    {
+                        soundplay && (
+                            <div className={`absolute flex flex-row justify-center items-center text-xs text-ecru top-4 right-4 ${music ? 'opacity-100' : 'opacity-0'} transition-all duration-300 ease-out`}>
+                                <h1 className="mr-3 font-semibold">Daystar - Cozy Cafe</h1>
+                                <div className="w-10 h-10">
+                                    <video src="/videos/soundplay.mp4" loop autoPlay muted></video>
+                                </div>
+                            </div>
+                        )
+                    }
                 </>
             )}
         </div>
