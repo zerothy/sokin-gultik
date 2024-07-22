@@ -22,6 +22,7 @@ export default function Hero() {
     const [isAnimatedCard, setIsAnimatedCard] = useState(false)
     const [isTransitioned, setIsTransitioned] = useState(false)
     const [isSlide, setIsSlide] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     const handleSelectImage = (index: number) => {
         setSelectedImage(index)
@@ -120,15 +121,36 @@ export default function Hero() {
                 setIsAnimatedCard(true)
             }, 1200)
         }
-        }, [selectedImage])
+    }, [selectedImage])
 
     useEffect(() => {
         setIsTransitioned(true)
         setTimeout(() => setIsTransitioned(false), 1200)
     }, [isSlide])
 
+    useEffect(() => {
+        let loadedImages = 0;
+        const imageCount = profileConstant.length;
+
+        profileConstant.forEach((profile) => {
+            const img = new Image();
+            img.src = `/images/profile/${profile.fileName}`;
+            img.onload = () => {
+                loadedImages++;
+                if (loadedImages === imageCount) {
+                    setIsLoading(false);
+                }
+            };
+        });
+    }, []);
+
     return (
         <div className="min-h-screen bg-charcoal fadeInAnimation">
+            {
+                isLoading && (
+                    <div />
+                )
+            }
             <div
                 className="flex flex-row gap-4 absolute left-1/2 top-1/2 w-max"
                 style={{
