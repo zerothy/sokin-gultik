@@ -4,7 +4,7 @@ export default function Card({ index }: { index: number }) {
     return (
         <div>
             <img 
-                src={profileConstant[index].fileName} 
+                src={`/images/profile/${profileConstant[index].fileName}`} 
                 alt={profileConstant[index].altName}
                 className="w-[20rem] h-[28rem] object-cover shadow-lg shadow-[#1A2D36] slideUpCard z-[60]"
             />

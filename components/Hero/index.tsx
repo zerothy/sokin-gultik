@@ -141,7 +141,7 @@ export default function Hero() {
                     profileConstant.map((profile, index) => (
                         <div key={index} onClick={() => { handleSelectImage(index) }}>
                             <img
-                                src={profile.fileName}
+                                src={`/images/profile/${profile.fileName}`}
                                 alt={profile.altName}
                                 className="object-cover unselectable h-96 w-64" draggable="false"
                                 style={{
@@ -174,12 +174,12 @@ export default function Hero() {
                             <div className="w-[40%] h-full z-[100]" onClick={() => {if(!isTransitioned) handleRight()}}></div>
 
                             <div 
-                                className={`absolute ${windowWidth < 1285 ? 'ml-[6.5rem] mt-[25%]' : 'ml-48 mt-[20%]'} left-0 top-0 w-max h-14 flex justify-between font-serif overflow-hidden`} 
+                                className={`absolute ${windowWidth < 1285 ? 'ml-[6.5rem] mt-[25%]' : 'ml-48 mt-[20%]'} left-0 top-0 w-max h-[3.4rem] flex justify-between font-serif overflow-hidden`} 
                                 onClick={() => {if(!isTransitioned) handleDeselectImage()}}
                                 onMouseEnter={() => setIsHovered(true)}
                                 onMouseLeave={() => setIsHovered(false)}
                             >
-                                <div className={`text-5xl text-center text-ecru z-[100] ${isAnimated ? `${isHovered ? '-translate-y-[185%]' : '-translate-y-[90%]'}` : ''}  transition-all duration-300 ease-out cursor-pointer`}>
+                                <div className={`text-5xl text-center text-ecru z-[100] ${isAnimated ? `${isHovered ? '-translate-y-[190%]' : '-translate-y-[90%]'}` : ''}  transition-all duration-300 ease-out cursor-pointer`}>
                                     <span></span>
                                     <br />
                                     {profileConstant[selectedImage].profileName}
@@ -188,7 +188,7 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <div className={`absolute font-serif text-ecru w-96 h-[5.2rem] overflow-hidden text-lg text-pretty left-0 top-0 ${windowWidth <= 1285 ? 'ml-[6.5rem] mt-[30%]' : 'ml-48 mt-[24%]'}`}>
+                            <div className={`absolute font-serif text-ecru w-96 h-max overflow-hidden text-lg text-pretty left-0 top-0 ${windowWidth <= 1285 ? 'ml-[6.5rem] mt-[30%]' : 'ml-48 mt-[24%]'}`}>
                                 <p className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-300 ease-out`}>{profileConstant[selectedImage].quotes}</p>
                             </div>
 
