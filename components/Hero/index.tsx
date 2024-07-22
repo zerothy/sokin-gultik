@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
+import Image from "next/image"
 
 import { profileConstant } from "./ProfileConstant"
 import Card from "../Card"
@@ -22,7 +23,6 @@ export default function Hero() {
     const [isAnimatedCard, setIsAnimatedCard] = useState(false)
     const [isTransitioned, setIsTransitioned] = useState(false)
     const [isSlide, setIsSlide] = useState(false)
-    const [isLoading, setIsLoading] = useState(true)
 
     const handleSelectImage = (index: number) => {
         setSelectedImage(index)
@@ -128,29 +128,8 @@ export default function Hero() {
         setTimeout(() => setIsTransitioned(false), 1200)
     }, [isSlide])
 
-    useEffect(() => {
-        let loadedImages = 0;
-        const imageCount = profileConstant.length;
-
-        profileConstant.forEach((profile) => {
-            const img = new Image();
-            img.src = `/images/profile/${profile.fileName}`;
-            img.onload = () => {
-                loadedImages++;
-                if (loadedImages === imageCount) {
-                    setIsLoading(false);
-                }
-            };
-        });
-    }, []);
-
     return (
         <div className="min-h-screen bg-charcoal fadeInAnimation">
-            {
-                isLoading && (
-                    <div />
-                )
-            }
             <div
                 className="flex flex-row gap-4 absolute left-1/2 top-1/2 w-max"
                 style={{
@@ -162,7 +141,7 @@ export default function Hero() {
                 {
                     profileConstant.map((profile, index) => (
                         <div key={index} onClick={() => { handleSelectImage(index) }}>
-                            <img
+                            <Image
                                 src={`/images/profile/${profile.fileName}`}
                                 alt={profile.altName}
                                 className="object-cover unselectable h-96 w-64" draggable="false"
@@ -171,6 +150,8 @@ export default function Hero() {
                                     transition: "object-position 1200ms",
                                     animationFillMode: "forwards",
                                 }}
+                                width={1024}
+                                height={1024}
                             />
                         </div>
                     ))
