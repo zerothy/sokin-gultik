@@ -1,5 +1,12 @@
 const profileConstant = [
     {
+        fileName: "iyan.jpg",
+        altName: "iyan",
+        profileName: "Iyaan",
+        fullName: "Alfian Bassam Firjatullah",
+        quotes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
         fileName: "widya.jpg",
         altName: "widya",
         profileName: "Widya",
@@ -12,13 +19,6 @@ const profileConstant = [
         profileName: "Clara",
         fullName: "Clara Aurelia Setiady",
         quotes: '"Aku mau jadi orang kaya!"'
-    },
-    {
-        fileName: "iyan.jpg",
-        altName: "iyan",
-        profileName: "Iyaan",
-        fullName: "Alfian Bassam Firjatullah",
-        quotes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
         fileName: "alex.jpg",
