@@ -189,14 +189,14 @@ export default function Hero() {
                                     <br />
                                     {profileConstant[selectedImage].fullName}
                                 </div>
+
+                                <div className={`relative font-serif text-ecru overflow-hidden h-6`}>
+                                    <h1 className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-400 ease-out`}>return</h1>
+                                </div>
                             </div>
 
                             <div className={`absolute font-serif text-ecru w-96 h-max overflow-hidden text-lg text-pretty left-0 top-0 ${windowWidth <= 1285 ? 'ml-[6.5rem] mt-[30%]' : 'ml-48 mt-[24%]'}`}>
-                                <p className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-300 ease-out`}>{profileConstant[selectedImage].quotes}</p>
-                            </div>
-
-                            <div className={`absolute font-serif text-ecru top-0 left-0 overflow-hidden ${windowWidth <= 1285 ? 'ml-[34.5rem] mt-[24%]' : 'ml-[39.8rem] mt-[19%]'}`}>
-                                <h1 className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-400 ease-out`}>return</h1>
+                                <p className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-300 ease-out italic`}>{profileConstant[selectedImage].quotes}</p>
                             </div>
 
                             <div className={`absolute right-0 z-[60] ${windowWidth <= 1285 ? (windowWidth <= 1124 ? 'mr-[9%]' : 'mr-[13%]') : 'mr-64'}`}>
