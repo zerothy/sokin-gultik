@@ -199,7 +199,7 @@ export default function Hero() {
                                 <p className={`${isAnimated ? `${isHovered ? 'translate-y-[0%]' : 'translate-y-[90%]'}` : 'translate-y-[90%]'} transition-all duration-300 ease-out italic`}>{profileConstant[selectedImage].quotes}</p>
                             </div>
 
-                            <div className={`absolute right-0 z-[60] ${windowWidth <= 1285 ? (windowWidth <= 1124 ? 'mr-[9%]' : 'mr-[13%]') : 'mr-64'}`}>
+                            <div className={`absolute right-0 z-[60]  ${profileConstant[selectedImage].altName === "jordan" ? "translate-x-[5rem]" : ""} ${windowWidth <= 1285 ? (windowWidth <= 1124 ? 'mr-[9%]' : 'mr-[13%]') : 'mr-64'}`}>
                                 {
                                     (isAnimatedCard) && (<Card index={selectedImage} />)
                                 }
