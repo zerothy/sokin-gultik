@@ -34,7 +34,7 @@ export default function Home() {
     }, [music]);
 
     useEffect(() => {
-        const checkIsMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const checkIsMobile = /iPhone|iPod|Android/i.test(navigator.userAgent);
         setIsMobile(checkIsMobile);
         setIsClient(true);
     }, []);
