@@ -32,7 +32,7 @@ const profileConstant = [
         altName: "kania",
         profileName: "Kania",
         fullName: "Kania Almyra Bilqist",
-        quotes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        quotes: "developernya (tew) jahat."
     },
     {
         fileName: "alex.jpg",
