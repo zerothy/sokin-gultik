@@ -7,13 +7,6 @@ const profileConstant = [
         quotes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
-        fileName: "widya.jpg",
-        altName: "widya",
-        profileName: "Widya",
-        fullName: "Widya Mutia Ichsan",
-        quotes: "When life gets you down, you know what you gotta do. Just keep swimming."
-    },
-    {
         fileName: "irfan.jpg",
         altName: "irfan",
         profileName: "Irfan",
@@ -26,6 +19,13 @@ const profileConstant = [
         profileName: "Clara",
         fullName: "Clara Aurelia Setiady",
         quotes: '"Aku mau jadi orang kaya!"'
+    },
+    {
+        fileName: "widya.jpg",
+        altName: "widya",
+        profileName: "Widya",
+        fullName: "Widya Mutia Ichsan",
+        quotes: "When life gets you down, you know what you gotta do. Just keep swimming."
     },
     {
         fileName: "kania.jpg",
@@ -69,6 +69,13 @@ const profileConstant = [
         fullName: "M. Arvin Wijayanto",
         quotes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
+    {
+        fileName: "luvenia.jpg",
+        altName: "luvenia",
+        profileName: "Luvenia",
+        fullName: "Luvenia Feodora Saragih",
+        quotes: "nama saya luvenia, bukan leuvina, bukan leuavenia, bukan juga luverenia."
+    }
 ]
 
 export { profileConstant }
