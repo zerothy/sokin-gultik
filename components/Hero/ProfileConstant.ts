@@ -69,13 +69,6 @@ const profileConstant = [
         fullName: "M. Arvin Wijayanto",
         quotes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
-    {
-        fileName: "jordan.jpg",
-        altName: "jordan",
-        profileName: "Jordan",
-        fullName: "Muhammad Jordan Ar-Razi Aziz",
-        quotes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
 ]
 
 export { profileConstant }
